@@ -1,0 +1,241 @@
+/* Custom styles for the plant catalog */
+
+/* Plant Card Styles */
+.plant-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    height: 100%;
+    transition: box-shadow 0.2s;
+}
+
+.plant-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plant-card-image {
+    width: 100%;
+    height: 12rem;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.plant-card-image.no-image {
+    background: linear-gradient(135deg, #dbeafe 0%, #dcfce7 100%);
+}
+
+.plant-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.plant-card-content {
+    padding: 1.25rem;
+}
+
+.plant-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.plant-latin {
+    font-size: 0.875rem;
+    color: #4b5563;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.plant-meta {
+    font-size: 0.75rem;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.plant-meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.plant-meta-label {
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.plant-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #059669;
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+}
+
+/* No Image Placeholder */
+.no-image-text {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.plant-info {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.plant-info.hidden {
+    display: none;
+}
+
+.plant-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Modal for plant details */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 0.5rem;
+    max-width: 42rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modal-header h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+.modal-header p {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-top: 0.25rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: #374151;
+}
+
+/* Image Gallery */
+.image-gallery {
+    margin-bottom: 1.5rem;
+}
+
+.image-gallery h3 {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.image-grid a {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.image-grid a:hover img {
+    transform: scale(1.1);
+}

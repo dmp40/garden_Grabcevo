@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd d:\\\\\\\\garden)",
+      "Bash(pip install *)",
+      "Bash(python)"
+    ]
+  }
+}

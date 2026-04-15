@@ -1,0 +1,16 @@
+{
+  "title": "Чай",
+  "slug": "chay",
+  "paragraphs": [
+    {
+      "type": "heading",
+      "text": "Чай"
+    }
+  ],
+  "images": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg"
+  ],
+  "image_count": 3
+}
