@@ -12,9 +12,14 @@
     <div class="min-h-screen">
         <!-- Header -->
         <header class="bg-white border-b border-gray-200 sticky top-0 z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <h1 class="text-3xl font-bold text-gray-900 mb-2">Каталог растений сада Эмсотех</h1>
-                <p class="text-gray-600">База данных растений в саду с поиском по названию</p>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-start">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Каталог растений сада Эмсотех</h1>
+                    <p class="text-gray-600">База данных растений в саду с поиском по названию</p>
+                </div>
+                <button id="about-btn" class="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors whitespace-nowrap">
+                    О саде
+                </button>
             </div>
         </header>
 
@@ -85,9 +90,53 @@
                 <p class="text-gray-400 mt-2">Попробуйте изменить критерии поиска</p>
             </div>
         </main>
+
+        <!-- About Garden Modal -->
+        <div id="about-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mx-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">О саде</h2>
+                    <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                </div>
+                <div class="text-gray-700 text-lg">
+                    <p>Сад создан по инициативе руководителя "Эмсотех" Сухоруковой Е.В</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="js/catalog.js"></script>
     <script src="js/search.js"></script>
+
+    <!-- Modal Script -->
+    <script>
+        const aboutBtn = document.getElementById('about-btn');
+        const aboutModal = document.getElementById('about-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        // Open modal
+        aboutBtn.addEventListener('click', () => {
+            aboutModal.classList.remove('hidden');
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            aboutModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        aboutModal.addEventListener('click', (e) => {
+            if (e.target === aboutModal) {
+                aboutModal.classList.add('hidden');
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !aboutModal.classList.contains('hidden')) {
+                aboutModal.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
